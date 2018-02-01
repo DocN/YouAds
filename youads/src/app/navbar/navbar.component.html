@@ -1,0 +1,32 @@
+<nav class="navbar  navbar-default navbar-expand-sm navbar-light bg-primary">
+    <div class="container">
+        <a href="#" class="navbar-brand">YouAds</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar4">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar4">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Advertisers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/video">Video Player Test</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div *ngIf="logcheck == 1; then logout else login"></div>
+                <ng-template #logout><li><a routerLink="/dashboard">Welcome {{ username }}</a></li></ng-template>
+                <ng-template #login><li><a routerLink="/login">Already a Member?</a></li></ng-template>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+
+    

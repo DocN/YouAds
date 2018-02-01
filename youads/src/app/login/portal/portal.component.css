@@ -1,0 +1,65 @@
+.containerColour {
+    background-color:#3498db;
+}
+
+.loginFrame {
+    height:500px;
+    border:1px solid;
+    border-radius: 5px;
+    background-color:#3498db;
+}
+
+.orText {
+    background-color:#f2f2f2;
+}
+
+.middleFrame {
+    margin-top:50px;
+}
+
+.loginHeader {
+    color:black;
+    font-weight:500;
+    font-size:50px;
+    margin-bottom:40px;
+}
+
+.loginText {
+    margin-top:50px;
+    color:white;
+    font-weight:500;
+    font-size:50px;
+}
+
+.textBoxPadding {
+    width:100%;
+}
+
+.buttonPortal {
+    width:100%;
+    margin-top:20px;
+    font-size:20px;
+}
+
+.textBoxesLength {
+    width:200%;
+    margin-left:-50%;
+}
+
+.textForgot {
+    margin-top:30px;
+    color:#c0bdbd;
+    font-weight:500;
+    font-size:30px;
+}
+
+.loginImage {
+    height:35px;
+    width:40px;
+}
+
+.loginText {
+    margin-left:-20px;
+    font-size:40px;
+    font-weight:500;
+}

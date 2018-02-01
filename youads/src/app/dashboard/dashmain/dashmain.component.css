@@ -1,0 +1,15 @@
+.firstContainer {
+    margin-top:100px;
+}
+
+.estimatedCard {
+    background-color:#3498db;
+    height:300px;
+}
+
+h2 {
+	color: white;
+	font-size: 45px;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
