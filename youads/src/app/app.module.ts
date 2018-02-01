@@ -36,6 +36,8 @@ import { VideoDurationPipe } from './shared/pipes/video-duration.pipe';
 import { VideoLikesViewsPipe } from './shared/pipes/video-likes-views.pipe';
 import { VideoNamePipe } from './shared/pipes/video-name.pipe';
 import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll.directive';
+import { ChatmainComponent } from './chat/chatmain/chatmain.component';
+import { AdframeComponent } from './videoplayer/adframe/adframe.component';
 
 const appRoutes:Routes = [
   {
@@ -57,6 +59,10 @@ const appRoutes:Routes = [
   {
     path: 'video',
     component: VpmainComponent
+  },
+  {
+    path: 'adframeTest',
+    component: AdframeComponent
   },
 ]
 @NgModule({
@@ -83,6 +89,10 @@ const appRoutes:Routes = [
     VideoNamePipe,
 
     LazyScrollDirective,
+
+    ChatmainComponent,
+
+    AdframeComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,7 +109,7 @@ const appRoutes:Routes = [
     YoutubePlayerService,
     PlaylistStoreService,
     NotificationService,
-    BrowserNotificationService
+    BrowserNotificationService,
   ],
   bootstrap: [AppComponent]
 })

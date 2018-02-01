@@ -1,10 +1,32 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-10 backTest">
-      <app-player-frame></app-player-frame>
-      <button (click)="testButton()">tester</button> 
+<div class="container-fluid defaultContainer">
+  <div class="container-fluid containerSettings">
+    <div class="row" #firstRow>
+      <div class="col-10 backTest"[style.width.px]="calculatedWidth" 
+      [style.height.px]="calculatedHeight" #videoBlock>
+        <div [ngClass]="{ 'animated fadeIn': transition == 1 }" id="advertisementFrame" [style.z-index]="zIndex"  [style.width.px]="calculatedWidth" [style.height.px]="calculatedHeight">
+          <h1> Advertisment Here!~!~!</h1>
+        </div>
+        <app-player-frame></app-player-frame>
+      </div>
+      <div class="col-2 chatBox">
+        <app-chatmain></app-chatmain>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 playerBottomBarTitle">
+        <div class="row rowPadding">
+          <div class="col-8">
+              <h4 class="videoTitle">{{ videoName }} </h4>
+          </div>
+          <div class="col-4 playerBottomBarTitleRight">
+              <button type="button" class="btn btn-info buttonMargins" (click)="playAd()">Play Ad</button>
+              <button type="button" class="btn btn-info buttonMargins" (click)="playVideoTest()">Play Test</button>
+              <button type="button" class="btn btn-warning buttonMargins">Subscribe</button>
+              <button type="button" class="btn btn-primary buttonMargins buttonMarginsFarRight">Donate</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 

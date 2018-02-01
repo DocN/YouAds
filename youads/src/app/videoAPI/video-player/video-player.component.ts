@@ -158,9 +158,4 @@ export class VideoPlayerComponent implements AfterContentInit {
         );
       });
   }
-
-  //custom functions
-  playVideoTest() {
-    this.youtubePlayer.playVideo("DhGFzaGVdWs");
-  }
 }

@@ -1,3 +1,0 @@
-# YouAds
-
-Kappa HD

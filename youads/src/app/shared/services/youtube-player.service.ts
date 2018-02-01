@@ -2,6 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NotificationService } from './notification.service';
 import { BrowserNotificationService } from './browser-notification.service';
+import { Subject } from 'rxjs/Subject';
 
 let _window: any = window;
 
@@ -9,6 +10,11 @@ let _window: any = window;
 export class YoutubePlayerService {
   public yt_player;
   private currentVideoId: string;
+  private height: number;
+  private width: number;
+
+  public videoPlayerState = new Subject<number>();
+  private currentVideoState = -1;
 
   @Output() videoChangeEvent: EventEmitter<any> = new EventEmitter(true);
   @Output() playPauseEvent: EventEmitter<any> = new EventEmitter(true);
@@ -23,8 +29,8 @@ export class YoutubePlayerService {
     let interval = setInterval(() => {
       if ((typeof _window.YT !== 'undefined') && _window.YT && _window.YT.Player) {
         this.yt_player = new _window.YT.Player('yt-player', {
-          width: '1586',
-          height: '850',
+          width: this.width,
+          height: this.height,
           playerVars: {
             iv_load_policy: '3',
             rel: '0'
@@ -42,6 +48,8 @@ export class YoutubePlayerService {
 
   onPlayerStateChange(event: any) {
     const state = event.data;
+    this.currentVideoState = state;
+    this.videoPlayerState.next();
     switch (state) {
       case 0:
         this.videoChangeEvent.emit(true);
@@ -90,5 +98,18 @@ export class YoutubePlayerService {
 
     let i = Math.floor(Math.random() * max);
     return i !== index ? i : this.getShuffled(index, max);
+  }
+
+  //custom functions
+
+  setDimensions(_width: number, _height: number): void{
+    this.width = _width;
+    this.height = _height;
+  }
+
+  //get current state
+
+  getCurrentState() {
+    return this.currentVideoState;
   }
 }

@@ -9,52 +9,7 @@
 
 h2 {
 	color: white;
+	font-size: 45px;
 	font-weight: 300;
 	letter-spacing: 1px;
-}
-
-.dashcolMain {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding-left:20px;
-	margin:0;
-	border-right-color:rgb(190, 187, 187);
-	border-right-width: 10px;
-	border-right-style:solid;
-	background-color:#3498db;
-	height:1500px;
-}
-.dashcol {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding:0;
-	margin:0;
-}
-.dashTitle {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding-top:20px;
-	background-color:#3498db;
-}
-.dashTitleText {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color:white;
-	font-weight: 1000;
-}
-
-.dashTitleTextContainer {
-	margin-left:30px;
-}
-
-.navDash {
-	background-color:#3498db;
-	padding-left:30px;
-}
-
-.navText {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color:white;
-	font-weight:500;
-}
-
-.navIcon {
-	height:30px;
-	width:30px;
 }

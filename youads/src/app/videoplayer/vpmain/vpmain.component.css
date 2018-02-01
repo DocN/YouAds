@@ -1,10 +1,72 @@
+html {
+    overflow-x: hidden;
+}
+.defaultContainer {
+    height:2000px;
+    background-color:#3498db;
+    margin:0px;
+    padding:0px;
+}
+.containerSettings {
+    padding-top:10px;
+    background-color:#3498db;
+    width:         calc(100% - 10px);
+}
 .backTest {
-    background-color:rgb(1, 1, 248);
+    background-color:rgb(99, 99, 192);
     padding:0px;
     margin:0px;
 }
-
-.adjustRow {
+.removeFluff {
     padding:0px;
     margin:0px;
+}
+.playerBottomBarTitle {
+    padding:0px;
+    margin:0px;
+    margin-top:10px;
+}
+
+.playerBottomBarTitleRight {
+    padding:0px;
+    margin:0px;
+    text-align:right;
+}
+
+.rowPadding {
+    margin-left:0px;
+    margin-right:0px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    
+    background-color:#4285f4;
+}
+
+.videoTitle {
+    color:white;
+    font-weight:500;
+}
+
+.buttonMargins {
+    margin-left:5px;
+    margin-right:5px;
+}
+.buttonMarginsFarRight {
+    
+}
+.chatBox {
+    margin-right:0px;
+    padding:0px;
+    padding-left:10px;
+    padding-right:10px;
+    width:100%;
+    background-color:#3498db;
+}
+
+#advertisementFrame {
+    padding:0;
+    margin:0;
+    position: absolute;
+    background-color:blue;
 }

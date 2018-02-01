@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import { NotificationService } from './notification.service';
 import { YOUTUBE_API_KEY } from '../constants';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class YoutubeApiService {
@@ -12,6 +13,8 @@ export class YoutubeApiService {
 
   public nextToken: string;
   public lastQuery: string;
+  public videoName: string;
+  public videoInfoUpdate = new Subject<number>();
 
   constructor(
     private http: Http,
@@ -83,5 +86,18 @@ export class YoutubeApiService {
 
     this.notificationService.showNotification(errMsg);
     return Promise.reject(errMsg);
+  }
+
+  //custom functions
+  GetVideo(vidID): void {
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${vidID}&key=${YOUTUBE_API_KEY}`; // tslint:disable-line
+    this.http.get(url)
+    .subscribe(data => {
+      let jsonRes = data.json();
+      let res = jsonRes['items']['0']['snippet']['localized']['title'];
+      this.videoName = JSON.stringify(res);
+      console.log(this.videoName);
+      this.videoInfoUpdate.next();
+     });
   }
 }
